@@ -15,11 +15,16 @@ class FXCustomTextField: UITextField {
     }
     
     private func commonInit() {
+        
+        self.returnKeyType = .next
+        
         // Set the Poppins-Regular font with a size of 12pt
-        self.font = UIFont(name: "Poppins-Regular", size: 14)
+        self.font = UIFont(name: "Poppins-Bold", size: 14)
 
         // Set corner radius and background color
         self.layer.cornerRadius = 14
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor(red: 0.969, green: 0.973, blue: 0.973, alpha: 1).cgColor
         self.backgroundColor = UIColor(red: 0.969, green: 0.973, blue: 0.973, alpha: 1)
 
         // Additional styling
@@ -44,6 +49,6 @@ class FXCustomTextField: UITextField {
     }
 
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: 315, height: 48)
+        return CGSize(width: 315, height: 50)
     }
 }
