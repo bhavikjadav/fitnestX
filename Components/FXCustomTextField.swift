@@ -19,13 +19,13 @@ class FXCustomTextField: UITextField {
         self.returnKeyType = .next
         
         // Set the Poppins-Regular font with a size of 12pt
-        self.font = UIFont(name: "Poppins-Bold", size: 14)
+        self.font = UIFont(name: FX.fonts.fontBold, size: 14)
 
         // Set corner radius and background color
         self.layer.cornerRadius = 14
         self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor(red: 0.969, green: 0.973, blue: 0.973, alpha: 1).cgColor
-        self.backgroundColor = UIColor(red: 0.969, green: 0.973, blue: 0.973, alpha: 1)
+        self.layer.borderColor = FX.colors.textFieldBorderColor
+        self.backgroundColor = FX.colors.textFieldBackgroundColor
 
         // Additional styling
         self.clipsToBounds = true

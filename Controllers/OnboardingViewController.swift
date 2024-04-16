@@ -17,6 +17,6 @@ class OnboardingViewController: UIViewController {
     }
 
     @IBAction func getStartedPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "toStartOnBoarding", sender: self)
+        performSegue(withIdentifier: FX.segues.toStartOnBoarding, sender: self)
     }
 }

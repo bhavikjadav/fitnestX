@@ -72,19 +72,22 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJz-FO-P3V" customClass="FXPrimaryButton" customModule="FitnestX" customModuleProvider="target">
-                                <rect key="frame" x="30" y="505" width="333" height="60"/>
+                                <rect key="frame" x="30" y="495" width="333" height="60"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Dzz-dv-T4o"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="regWithEmailAndPassword:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="EP8-bD-UE5"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="or" translatesAutoresizingMaskIntoConstraints="NO" id="3o4-6V-CIJ">
-                                <rect key="frame" x="30" y="575" width="333" height="36"/>
+                                <rect key="frame" x="30" y="565" width="333" height="36"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5M-GV-b1k">
-                                <rect key="frame" x="121.66666666666669" y="619" width="150" height="50"/>
+                                <rect key="frame" x="121.66666666666669" y="609" width="150" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfB-RJ-dpr" customClass="FXSquareButtonWithIcon" customModule="FitnestX" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -96,6 +99,9 @@
                                         <state key="normal">
                                             <color key="titleColor" systemColor="labelColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="regWithGoogleTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="s20-TT-PxR"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fyw-ci-66z" customClass="FXSquareButtonWithIcon" customModule="FitnestX" customModuleProvider="target">
                                         <rect key="frame" x="99.999999999999986" y="0.0" width="50.000000000000014" height="50"/>
@@ -107,6 +113,9 @@
                                         <state key="normal">
                                             <color key="titleColor" systemColor="labelColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="regWithFBTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="MTf-Jx-0Vc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -122,8 +131,16 @@
                                     <constraint firstAttribute="height" constant="50" id="nZM-2e-Ifm"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account? Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jxw-8n-zJg">
-                                <rect key="frame" x="76" y="757" width="241" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0R-jB-hoO">
+                                <rect key="frame" x="175.66666666666666" y="773" width="42" height="33"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jxw-8n-zJg">
+                                <rect key="frame" x="99" y="750" width="195" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -132,22 +149,24 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Jxw-8n-zJg" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="0J1-oJ-nau"/>
                             <constraint firstItem="xU0-ad-c3D" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="1Uf-cu-RTf"/>
                             <constraint firstAttribute="trailing" secondItem="3o4-6V-CIJ" secondAttribute="trailing" constant="30" id="4we-Pz-5WN"/>
                             <constraint firstItem="BOz-3e-FSb" firstAttribute="top" secondItem="5bS-0u-xE5" secondAttribute="bottom" constant="15" id="5bi-20-QPW"/>
                             <constraint firstItem="pMs-1t-B53" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="6gi-e1-JHq"/>
+                            <constraint firstItem="j0R-jB-hoO" firstAttribute="top" secondItem="Jxw-8n-zJg" secondAttribute="bottom" constant="2" id="7LD-1m-JRH"/>
                             <constraint firstItem="kJz-FO-P3V" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="9B1-oT-2vV"/>
                             <constraint firstItem="pMs-1t-B53" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="9bT-EE-5bz"/>
                             <constraint firstItem="pMs-1t-B53" firstAttribute="top" secondItem="Rut-Ns-kRT" secondAttribute="bottom" constant="30" id="GI8-4o-jKH"/>
-                            <constraint firstItem="kJz-FO-P3V" firstAttribute="top" secondItem="BOz-3e-FSb" secondAttribute="bottom" constant="140" id="Gvc-it-4S6"/>
+                            <constraint firstItem="kJz-FO-P3V" firstAttribute="top" secondItem="BOz-3e-FSb" secondAttribute="bottom" constant="130" id="Gvc-it-4S6"/>
                             <constraint firstItem="3o4-6V-CIJ" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="30" id="HQM-GE-lc1"/>
                             <constraint firstItem="h5M-GV-b1k" firstAttribute="top" secondItem="3o4-6V-CIJ" secondAttribute="bottom" constant="8" id="IgC-0A-JLX"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Jxw-8n-zJg" secondAttribute="bottom" constant="40" id="Iq6-Lh-pr7"/>
                             <constraint firstItem="5bS-0u-xE5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="LKo-I3-GBR"/>
                             <constraint firstItem="h5M-GV-b1k" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Lel-OP-P2S"/>
                             <constraint firstItem="Rut-Ns-kRT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="91" id="N9k-c4-0Gx"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xU0-ad-c3D" secondAttribute="trailing" constant="30" id="PPa-wE-8IG"/>
                             <constraint firstItem="BOz-3e-FSb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="SVu-Gs-VZ6"/>
+                            <constraint firstItem="j0R-jB-hoO" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Scq-rz-jhi"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kJz-FO-P3V" secondAttribute="trailing" constant="30" id="Sj5-vG-36R"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Rut-Ns-kRT" secondAttribute="trailing" constant="91" id="SsP-Cg-hpR"/>
                             <constraint firstItem="Rut-Ns-kRT" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="Tbd-lw-G8T"/>
@@ -159,6 +178,7 @@
                             <constraint firstItem="Jxw-8n-zJg" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="p2c-TA-z2X"/>
                             <constraint firstItem="kJz-FO-P3V" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="pFH-FT-gsU"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5bS-0u-xE5" secondAttribute="trailing" constant="30" id="tMn-a2-5s0"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="j0R-jB-hoO" secondAttribute="bottom" constant="12" id="vz3-wn-jev"/>
                             <constraint firstItem="3o4-6V-CIJ" firstAttribute="top" secondItem="kJz-FO-P3V" secondAttribute="bottom" constant="10" id="xn5-9L-NsZ"/>
                         </constraints>
                     </view>
@@ -170,11 +190,28 @@
                         <outlet property="registerBtn" destination="kJz-FO-P3V" id="dnf-k8-iLG"/>
                         <outlet property="registerWithFbBtn" destination="Fyw-ci-66z" id="Wdq-Ku-p2F"/>
                         <outlet property="registerWithGoogleBtn" destination="kfB-RJ-dpr" id="DPR-7k-Zux"/>
+                        <segue destination="k79-jT-og3" kind="presentation" identifier="toCompleteProfile" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="RKx-B8-tz0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11.450381679389313" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="1864.885496183206" y="-34.507042253521128"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bm9-fD-AbR">
+            <objects>
+                <viewController id="k79-jT-og3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TlF-7b-LYY">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Nbr-99-Vvb"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GZH-1r-TR6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T97-dS-bzn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2746" y="-35"/>
         </scene>
     </scenes>
     <resources>
@@ -184,6 +221,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
