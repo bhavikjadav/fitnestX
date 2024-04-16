@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Bold.ttf 16-50-58-190.ttf">
+            <string>Poppins-Bold</string>
+        </array>
+        <array key="Poppins-Light.ttf 16-50-58-193.ttf">
+            <string>Poppins-Light</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Onboarding View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="OnboardingViewController" customModule="FitnestX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Onboarding-image" translatesAutoresizingMaskIntoConstraints="NO" id="i8S-jj-OfW">
+                                <rect key="frame" x="76.666666666666686" y="362" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="5ze-Do-cpe"/>
+                                    <constraint firstAttribute="width" constant="240" id="mZs-9A-Kuz"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDl-DO-UEK" customClass="FXPrimaryButton" customModule="FitnestX" customModuleProvider="target">
+                                <rect key="frame" x="39" y="738" width="315" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="VwS-cx-t75"/>
+                                    <constraint firstAttribute="width" constant="315" id="eo9-6H-Zp7"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Get Started"/>
+                                <connections>
+                                    <action selector="getStartedPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gQA-hp-XYb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nDl-DO-UEK" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="LIC-Wf-Zed"/>
+                            <constraint firstItem="i8S-jj-OfW" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Ri3-OZ-Go8"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="nDl-DO-UEK" secondAttribute="bottom" constant="20" id="Ybu-PD-K86"/>
+                            <constraint firstItem="i8S-jj-OfW" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ktE-JD-ru0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="getStartedBtn" destination="nDl-DO-UEK" id="IqU-pz-Eba"/>
+                        <segue destination="qwn-8C-Nyc" kind="show" identifier="toStartOnBoarding" id="A60-Gh-k4T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1045" y="6"/>
+        </scene>
+        <!--On Boarding Steps View Controller-->
+        <scene sceneID="qjP-iQ-tdO">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="qwn-8C-Nyc" customClass="OnBoardingStepsViewController" customModule="FitnestX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G7v-tA-6VH">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TrackYourGoal" translatesAutoresizingMaskIntoConstraints="NO" id="nXC-um-Yy3">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="435"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="393" id="4jp-x8-skF"/>
+                                    <constraint firstAttribute="height" constant="435" id="AOc-Hv-nK9"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Your Goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ynw-FV-ahS">
+                                <rect key="frame" x="29.999999999999986" y="474" width="219.66666666666663" height="38"/>
+                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't worry if you have trouble determining your goals, We can help you determine your goals and track your goals" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tai-2Y-auq">
+                                <rect key="frame" x="30" y="532" width="333" height="63"/>
+                                <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="15"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecx-nP-KRa">
+                                <rect key="frame" x="288" y="757" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="YPq-0b-09g"/>
+                                    <constraint firstAttribute="height" constant="65" id="uOb-wY-eZs"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="ArrowRight"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Mjq-iv-reP"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="nXC-um-Yy3" secondAttribute="trailing" id="1xk-kf-Rci"/>
+                            <constraint firstItem="nXC-um-Yy3" firstAttribute="top" secondItem="G7v-tA-6VH" secondAttribute="top" id="2L3-0q-TJ7"/>
+                            <constraint firstItem="nXC-um-Yy3" firstAttribute="trailing" secondItem="Mjq-iv-reP" secondAttribute="trailing" id="6HB-6y-Lls"/>
+                            <constraint firstItem="nXC-um-Yy3" firstAttribute="leading" secondItem="G7v-tA-6VH" secondAttribute="leading" id="Fai-wS-Wrg"/>
+                            <constraint firstItem="nXC-um-Yy3" firstAttribute="top" secondItem="Mjq-iv-reP" secondAttribute="top" id="JEd-P0-w9K"/>
+                            <constraint firstItem="Mjq-iv-reP" firstAttribute="bottom" secondItem="ecx-nP-KRa" secondAttribute="bottom" constant="30" id="Ju4-Lw-i8p"/>
+                            <constraint firstAttribute="trailing" secondItem="nXC-um-Yy3" secondAttribute="trailing" id="SFB-iJ-ddz"/>
+                            <constraint firstItem="Mjq-iv-reP" firstAttribute="trailing" secondItem="ecx-nP-KRa" secondAttribute="trailing" constant="40" id="agg-LE-GK1"/>
+                            <constraint firstItem="Tai-2Y-auq" firstAttribute="leading" secondItem="Mjq-iv-reP" secondAttribute="leading" constant="30" id="d9j-mZ-52D"/>
+                            <constraint firstItem="Mjq-iv-reP" firstAttribute="trailing" secondItem="Tai-2Y-auq" secondAttribute="trailing" constant="30" id="mZu-3G-tbX"/>
+                            <constraint firstItem="Tai-2Y-auq" firstAttribute="top" secondItem="Ynw-FV-ahS" secondAttribute="bottom" constant="20" id="nyL-PC-oYc"/>
+                            <constraint firstItem="nXC-um-Yy3" firstAttribute="leading" secondItem="Mjq-iv-reP" secondAttribute="leading" id="rJK-7L-6Pa"/>
+                            <constraint firstItem="Ynw-FV-ahS" firstAttribute="top" secondItem="nXC-um-Yy3" secondAttribute="bottom" constant="39" id="sUc-Yc-cK3"/>
+                            <constraint firstItem="Ynw-FV-ahS" firstAttribute="leading" secondItem="Mjq-iv-reP" secondAttribute="leading" constant="30" id="uQk-pB-lCO"/>
+                            <constraint firstItem="nXC-um-Yy3" firstAttribute="top" secondItem="G7v-tA-6VH" secondAttribute="top" id="x45-0Q-8pK"/>
+                            <constraint firstItem="nXC-um-Yy3" firstAttribute="leading" secondItem="G7v-tA-6VH" secondAttribute="leading" id="y5j-Mk-lmR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="G5c-CR-Ylg"/>
+                    <connections>
+                        <outlet property="OnBoardNextBtn" destination="ecx-nP-KRa" id="w9J-cP-Rdb"/>
+                        <outlet property="nextBoardDescription" destination="Tai-2Y-auq" id="acq-u5-A6U"/>
+                        <outlet property="nextBoardImage" destination="nXC-um-Yy3" id="Mrk-rP-pVC"/>
+                        <outlet property="nextBoardTitle" destination="Ynw-FV-ahS" id="wY6-FP-pHX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H87-zt-mf0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-118.32061068702289" y="5.6338028169014089"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ArrowRight" width="36" height="36"/>
+        <image name="Onboarding-image" width="370" height="151"/>
+        <image name="TrackYourGoal" width="1125" height="1218"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

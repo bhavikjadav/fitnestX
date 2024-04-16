@@ -1,0 +1,6 @@
+framework module Pods_FitnestX {
+  umbrella header "Pods-FitnestX-umbrella.h"
+
+  export *
+  module * { export * }
+}
