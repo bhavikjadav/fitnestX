@@ -30,6 +30,23 @@ class FXCustomTextField: UITextField {
         // Additional styling
         self.clipsToBounds = true
     }
+    
+    func setRightImage(_ image: UIImage) {
+            let iconSize = CGFloat(18)  // Size of the icon
+            let rightMargin = CGFloat(15)
+            let spaceBetweenIconAndEdge = CGFloat(8)
+
+            let rightImageView = UIImageView(frame: CGRect(x: spaceBetweenIconAndEdge, y: 0.0, width: iconSize, height: iconSize))
+            rightImageView.image = image
+            rightImageView.contentMode = .scaleAspectFit
+
+            let viewWidth = iconSize + rightMargin + spaceBetweenIconAndEdge
+            let rightView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: viewWidth, height: iconSize))
+            rightView.addSubview(rightImageView)
+
+            self.rightView = rightView
+            self.rightViewMode = .always
+        }
 
     func setLeftImage(_ image: UIImage) {
         let iconSize = CGFloat(18)  // Size of the icon

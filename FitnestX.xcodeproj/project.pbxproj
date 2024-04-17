@@ -48,6 +48,8 @@
 		FF3DF5372BB2EDBB00092801 /* FXSquareButtonWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3DF5362BB2EDBB00092801 /* FXSquareButtonWithIcon.swift */; };
 		FF3E31542BCE8A9300A31CC3 /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3E31532BCE8A9300A31CC3 /* String + Extension.swift */; };
 		FF3E31562BCE919200A31CC3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3E31552BCE919200A31CC3 /* Constants.swift */; };
+		FF3E31582BCFB6E200A31CC3 /* CompleteProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3E31572BCFB6E200A31CC3 /* CompleteProfileViewController.swift */; };
+		FF3E315A2BCFCEA800A31CC3 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FF3E31592BCFCEA800A31CC3 /* IQKeyboardManagerSwift */; };
 		FF4175B02BA56C4C00717113 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF4175AE2BA56C4C00717113 /* LaunchScreen.storyboard */; };
 		FF4175C32BA57F5E00717113 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF4175C22BA57F5E00717113 /* Onboarding.storyboard */; };
 		FF4175F42BA584BE00717113 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4175F12BA584BE00717113 /* Assets.xcassets */; };
@@ -89,6 +91,7 @@
 		FF3DF5362BB2EDBB00092801 /* FXSquareButtonWithIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXSquareButtonWithIcon.swift; sourceTree = "<group>"; };
 		FF3E31532BCE8A9300A31CC3 /* String + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = SOURCE_ROOT; };
 		FF3E31552BCE919200A31CC3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FF3E31572BCFB6E200A31CC3 /* CompleteProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteProfileViewController.swift; sourceTree = "<group>"; };
 		FF4175AF2BA56C4C00717113 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF4175B12BA56C4C00717113 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF4175C22BA57F5E00717113 /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Onboarding.storyboard; path = Base.lproj/Onboarding.storyboard; sourceTree = "<group>"; };
@@ -126,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF3E315A2BCFCEA800A31CC3 /* IQKeyboardManagerSwift in Frameworks */,
 				FF29947D2BB6BBC300286AA2 /* FirebaseAnalyticsSwift in Frameworks */,
 				FF29947F2BB6BBC300286AA2 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				FF199A4C2BBC1092008F17F6 /* FacebookShare in Frameworks */,
@@ -243,6 +247,7 @@
 				FF796A4B2BA85D0E00F05318 /* OnBoardingStepsViewController.swift */,
 				FFFE22012BAB05070064F74A /* OnboardingViewController.swift */,
 				FFCCD96C2BAC4B2D00AC7F96 /* SignupAndLoginViewController.swift */,
+				FF3E31572BCFB6E200A31CC3 /* CompleteProfileViewController.swift */,
 			);
 			name = Controllers;
 			path = ../Controllers;
@@ -351,6 +356,7 @@
 				FF199A472BBC1092008F17F6 /* FacebookCore */,
 				FF199A492BBC1092008F17F6 /* FacebookLogin */,
 				FF199A4B2BBC1092008F17F6 /* FacebookShare */,
+				FF3E31592BCFCEA800A31CC3 /* IQKeyboardManagerSwift */,
 			);
 			productName = FitnestX;
 			productReference = FF29946B2BB5900F00286AA2 /* FitnestX.app */;
@@ -467,6 +473,7 @@
 				FF3E31562BCE919200A31CC3 /* Constants.swift in Sources */,
 				FF3E31542BCE8A9300A31CC3 /* String + Extension.swift in Sources */,
 				FF796A4A2BA8546A00F05318 /* FXPrimaryButton.swift in Sources */,
+				FF3E31582BCFB6E200A31CC3 /* CompleteProfileViewController.swift in Sources */,
 				FF4175F52BA584BE00717113 /* SceneDelegate.swift in Sources */,
 				FF3DF5372BB2EDBB00092801 /* FXSquareButtonWithIcon.swift in Sources */,
 			);
@@ -908,6 +915,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FF2994772BB6BBC300286AA2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		FF3E31592BCFCEA800A31CC3 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF2994662BB58F3900286AA2 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -2,8 +2,12 @@ import UIKit
 import GoogleSignIn
 import FBSDKLoginKit
 import FirebaseAuth
+import FirebaseCore
+import FirebaseFirestore
 
 class SignupAndLoginViewController: UIViewController, UITextFieldDelegate {
+    
+    var db: Firestore!
 
     // MARK: - Outlets
     @IBOutlet weak var firstNameField: FXCustomTextField!
@@ -21,6 +25,9 @@ class SignupAndLoginViewController: UIViewController, UITextFieldDelegate {
         firstNameField.delegate = self
         emailField.delegate = self
         passwordField.delegate = self
+        
+        // Establishing DB Connection
+        db = Firestore.firestore()
         
         setupObservers()
         loadBasicDesigns()
@@ -68,22 +75,23 @@ class SignupAndLoginViewController: UIViewController, UITextFieldDelegate {
         if let email = emailField.text, let password = passwordField.text {
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if let e = error {
-                    
-                    if self.firstNameField.text == "" {
-                        self.showAlert(title: "Your Good Name is Missing!", message: "Kindly Provide your First & Last Name")
-                        self.firstNameField.layer.borderColor = FX.colors.dangerColor
-                    } else if !email.validateEmailId() {
-                        self.showAlert(title: "Invalid Email Address", message: "Kindly provide proper/valid email address.")
-                        self.emailField.layer.borderColor = FX.colors.dangerColor
-                    } else if e.localizedDescription == "The email address is already in use by another account." {
-                        self.showAlert(title: "Email is already in use!", message: "Kindly enter new email address.")
-                        self.emailField.layer.borderColor = FX.colors.dangerColor
-                    } else if e.localizedDescription == "The password must be 6 characters long or more." {
-                        self.showAlert(title: "Poor Password!", message: "The password must be 6 characters long or more.")
-                        self.passwordField.layer.borderColor = FX.colors.dangerColor
-                    }
-                    print(e.localizedDescription)
+                    // Handle Auth Errors through Validation
+                    self.handleAuthErrors(e)
                 } else {
+                    // Store First & Last Name in Basic Bio Collection
+                    let userData: [String: Any] = ["firstName": self.firstNameField.text ?? "",
+                                                   "lastName": self.lastNameField.text ?? ""]
+                    self.db.collection("basicBio").document().setData(userData) { err in
+                        if let err = err {
+                            print("Error writing document: \(err)")
+                        } else {
+                            print("Document successfully written!")
+                            // Navigate to Next Screen
+                            DispatchQueue.main.async {
+                                self.performSegue(withIdentifier: FX.segues.toCompleteProfile, sender: self)
+                            }
+                        }
+                    }
                     // Navigate to Next Screen
                     self.performSegue(withIdentifier: FX.segues.toCompleteProfile, sender: self)
                     print("User has been Registered.")
@@ -142,5 +150,25 @@ extension SignupAndLoginViewController {
                 print("Name: \(name)")
             }
         }
+    }
+    
+    //MARK: - Handle Auth Errors through Validation
+    
+    private func handleAuthErrors(_ error: Error) {
+        let nsError = error as NSError
+        if self.firstNameField.text == "" {
+            self.showAlert(title: "Your Good Name is Missing!", message: "Kindly Provide your First & Last Name")
+            self.firstNameField.layer.borderColor = FX.colors.dangerColor
+        } else if !emailField.text!.validateEmailId() {
+            self.showAlert(title: "Invalid Email Address", message: "Kindly provide proper/valid email address.")
+            self.emailField.layer.borderColor = FX.colors.dangerColor
+        } else if nsError.code == AuthErrorCode.emailAlreadyInUse.rawValue {
+            self.showAlert(title: "Email is already in use!", message: "Kindly enter new email address.")
+            self.emailField.layer.borderColor = FX.colors.dangerColor
+        } else if nsError.code == AuthErrorCode.weakPassword.rawValue {
+            self.showAlert(title: "Poor Password!", message: "The password must be 6 characters long or more.")
+            self.passwordField.layer.borderColor = FX.colors.dangerColor
+        }
+        print(error.localizedDescription)
     }
 }
